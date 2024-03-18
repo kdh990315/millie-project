@@ -9,16 +9,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css">
 
-
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
-    <script src="js/ajax.js"></script>
-    <script src="js/fade_in_out.js"></script>
-    <script src="js/index_slide.js"></script>
-    <script src="js/content_fade_in_out.js"></script>
-    <script src="js/footer_service.js"></script>
-    <script src="js/QNA_toggle.js"></script>
-    <script src="js/header_fixed.js"></script>
-    <script src="js/scroll_ev.js"></script>
 </head>
 
 <body>
@@ -79,66 +70,9 @@
             </p>
         </div>
 
-        <div class="list_wrap">
+        <div class="list_wrap"></div>
 
-            <div class="list">
-                <strong>지금 서점 베스트 셀러</strong>
-                <div class="item_box">
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                </div>
-            </div>
-
-            <div class="list">
-                <strong>추리 소설의 대가 히가시노 게이고 소설</strong>
-
-                <div class="item_box">
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                </div>
-            </div>
-
-            <div class="list">
-                <strong>한 달 이내 출간된 책</strong>
-                <div class="item_box">
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                </div>
-            </div>
-
-            <div class="list">
-                <strong>밀리 독점 만화</strong>
-                <div class="item_box">
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                    <div class="item"></div>
-                </div>
-            </div>
-
-        </div> <!-- list wrap -->
-
-
-
-    </section> <!-- book list -->
+    </section>
 
     <section id="pick_book_wrap">
         <div class="text_wrap">
@@ -159,65 +93,24 @@
                 <button class="btn">다이어트</button>
             </div>
             <!-- 주식 -->
-            <div class="item_box_wrap item_box_on">
-                <div class="item_box">
-                    <div class="item item_pick1"></div>
-                    <div class="item item_pick1"></div>
-                    <div class="item item_pick1"></div>
-                    <div class="item item_pick1"></div>
-                    <div class="item item_pick1"></div>
-                    <div class="item item_pick1"></div>
-                    <div class="item item_pick1"></div>
-                </div>
+            <div class="item_box_wrap item_box_on dragEl">
+                <div class="item_container"></div>
             </div>
-
             <!-- 영어 -->
-            <div class="item_box_wrap">
-                <div class="item_box">
-                    <div class="item item_pick2"></div>
-                    <div class="item item_pick2"></div>
-                    <div class="item item_pick2"></div>
-                    <div class="item item_pick2"></div>
-                    <div class="item item_pick2"></div>
-                    <div class="item item_pick2"></div>
-                    <div class="item item_pick2"></div>
-                </div>
+            <div class="item_box_wrap dragEl">
+                <div class="item_container"></div>
             </div>
             <!-- 공무원 -->
-            <div class="item_box_wrap">
-                <div class="item_box">
-                    <div class="item item_pick3"></div>
-                    <div class="item item_pick3"></div>
-                    <div class="item item_pick3"></div>
-                    <div class="item item_pick3"></div>
-                    <div class="item item_pick3"></div>
-                    <div class="item item_pick3"></div>
-                    <div class="item item_pick3"></div>
-                </div>
+            <div class="item_box_wrap dragEl">
+                <div class="item_container"></div>
             </div>
             <!-- 만화 -->
-            <div class="item_box_wrap">
-                <div class="item_box">
-                    <div class="item item_pick4"></div>
-                    <div class="item item_pick4"></div>
-                    <div class="item item_pick4"></div>
-                    <div class="item item_pick4"></div>
-                    <div class="item item_pick4"></div>
-                    <div class="item item_pick4"></div>
-                    <div class="item item_pick4"></div>
-                </div>
+            <div class="item_box_wrap dragEl">
+                <div class="item_container"></div>
             </div>
             <!-- 다이어트 -->
-            <div class="item_box_wrap">
-                <div class="item_box">
-                    <div class="item item_pick5"></div>
-                    <div class="item item_pick5"></div>
-                    <div class="item item_pick5"></div>
-                    <div class="item item_pick5"></div>
-                    <div class="item item_pick5"></div>
-                    <div class="item item_pick5"></div>
-                    <div class="item item_pick5"></div>
-                </div>
+            <div class="item_box_wrap dragEl">
+                <div class="item_container"></div>
             </div>
         </div>
     </section>
@@ -647,18 +540,12 @@
         </div>
     </footer>
 
-
-
-
-
-
-
-
     <a href="sub1.html" class="fixed_banner">
         <p><strong>첫 달 무료</strong>로 독서 시작하기</p>
     </a>
 
-
+    <script type="module" src="./js/Fetch_API.js"></script>
+    <script src="./js/index/index.js"></script>
 </body>
 
 </html>

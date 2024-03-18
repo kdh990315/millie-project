@@ -5,11 +5,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Noto+Sans+KR:wght@100;400&display=swap');
 
 @mixin item {
-    .item_box {
-        width: 100%;
+    .item_container {
+        width: 1200px;
         // height: 360px;
         display: flex;
         justify-content: space-between;
+        user-select: none;
 
         .item {
             width: 145px;
@@ -22,7 +23,6 @@
             align-items: flex-start;
 
             img {
-                width: 95%;
                 padding-top: 10px;
                 box-shadow: 5px 5px 5px #ededed;
             }
@@ -279,9 +279,9 @@ header {
         height: auto;
         margin: 0 auto;
 
-        .list {
+        .item_wrap {
             width: 100%;
-            // height: 400px;
+            height: 370px;
             margin-bottom: 65px;
 
             &:first-child {
@@ -299,6 +299,15 @@ header {
             }
 
             @include item;
+        }
+
+        @media (max-width: 1200px) {
+            padding: 0 10px;
+
+            .item_wrap {
+                overflow-x: hidden;
+
+            }
         }
     }
 }
@@ -346,8 +355,16 @@ header {
         }
 
         @include item;
+    }
 
+    @media (max-width: 1200px) {
+        .pick_main {
+            width: 100%;
 
+            .item_box_wrap  {
+                overflow-x: hidden;
+            }
+        }
     }
 }
 
@@ -918,7 +935,7 @@ header {
                 content: "";
                 width: 30px;
                 height: 30px;
-                background-image: url(../img/down_icon.png);
+                background-image: url(../img/down-arr.png);
                 background-size: 28px;
                 background-repeat: no-repeat;
                 position: absolute;
@@ -934,7 +951,7 @@ header {
                 content: "";
                 width: 30px;
                 height: 30px;
-                background-image: url(../img/up_icon.png);
+                background-image: url(../img/up-arr.png);
                 background-size: 28px;
                 background-repeat: no-repeat;
                 position: absolute;
@@ -1125,11 +1142,10 @@ footer {
         }
     }
 
-    .item_box {
+    .item_container {
         width: 100%;
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
 
         .item {
             width: 145px;
@@ -1139,7 +1155,6 @@ footer {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            padding-right: 5%;
         }
     }
 
@@ -1493,7 +1508,7 @@ footer {
                     padding-top: 40px;
 
                     h1 {
-                        font-size: 49px;
+                        font-size: 40px;
                         color: #242424;
                         margin-bottom: 24px;
                         line-height: 60px;
@@ -1685,4 +1700,23 @@ footer {
         }
     }
 
+    #QNA {
+        .QNA_title {
+            #QNA_wrap {
+                .QNA_contents {
+                    .question {
+                        p {
+                            font-size: 17px;
+                        }
+                    }
+            
+                    .answer {
+                        p {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
