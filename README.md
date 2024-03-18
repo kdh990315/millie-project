@@ -1,5 +1,5 @@
 ## 밀리의 서재
-<a href="https://fishing-reservation-54646.web.app/#/">사이트 바로가기</a>
+<a href="https://kdh990315.github.io/millie-project/">사이트 바로가기</a>
 
 ### 프로젝트 개요
 해당 프로젝트는 밀리의 서재를 순수 JavaScript로 클론코딩한 것입니다. 밀리의 서재는 일반적인 웹사이트에서 많이 사용되는 다양한 기능과 디자인이 포함된 웹사이트로, 이를 참고하여 구현하였습니다.
