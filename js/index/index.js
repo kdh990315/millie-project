@@ -1,16 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-	//header 고정
-	let logo = document.getElementById("logo"),
-		docu = document.documentElement,
-		scrollPos;
-
-	window.addEventListener("scroll", () => {
-		scrollPos = docu.scrollTop;
-		logo.style.background = (scrollPos > 750) ? "left / contain no-repeat url(./img/simple-logo.png)" : "left / contain no-repeat url(./img/full_logo.png)";
-	});
-	//header 고정
-
 	//scroll animation
 	const slogan = document.querySelectorAll('.slogan');
 
@@ -145,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	//오디오북
 
 	//QNA Toggle
-
 	let contents = document.querySelectorAll('.QNA_contents'),
 		contexts_on = 'QNA_on';
 
@@ -156,13 +143,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	//QNA Toggle
 
+	//video 재생
+	const videoBtn = document.querySelector('.play_btn');
+	const video = document.querySelector('.review_video');
 
-	//footer click event
-	let footer_button = document.querySelector('#footer_btn'),
-		footer_QT = document.querySelector('.footer_QT');
-
-	footer_button.addEventListener('click', () => {
-		footer_QT.classList.contains('footer_QT_on') ? footer_QT.classList.remove('footer_QT_on') : footer_QT.classList.add('footer_QT_on');
-	})
-	//footer click event
+	videoBtn.addEventListener('click', () => {
+		let src = video.getAttribute('src');
+		src += '?autoplay=1&mute=1';
+		video.setAttribute('src', src);
+		video.style.display = 'block';
+	});
+	//video 재생
 })

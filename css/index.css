@@ -849,6 +849,15 @@ header .header_wrap .header_info_box ul li .login {
   color: #fff;
   cursor: pointer;
 }
+#review .review_wrap .review_left .video_poster .review_video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: none;
+}
 #review .review_wrap .review_rigth {
   width: 50%;
   height: 100%;
@@ -1197,12 +1206,6 @@ footer .footer_wrap p {
     flex-direction: column;
     height: auto;
   }
-  #content_wrap .content:nth-of-type(3) {
-    display: none;
-  }
-  #content_wrap .content:nth-of-type(4) {
-    display: none;
-  }
   #content_wrap .content .left_content {
     text-align: center;
     width: 100%;
@@ -1298,6 +1301,9 @@ footer .footer_wrap p {
   #content_wrap .content .right_content_wrap .right_content .phone {
     width: 100%;
     position: absolute;
+  }
+  #content_wrap .content .content_on {
+    display: flex;
   }
   #review {
     width: 100%;
@@ -1520,7 +1526,7 @@ footer .footer_wrap p {
     color: #242424;
   }
   #reading {
-    margin-top: 810px;
+    margin-top: 350px;
   }
   #reading .reading_animation_wrap .reading_animation .card2 {
     left: 19%;

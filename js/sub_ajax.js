@@ -1,65 +1,122 @@
-$.ajax({
-    method: "GET",
-    url: "https://dapi.kakao.com/v3/search/book?target=title",
-    data: { query: "나미야" },
-    headers: { Authorization: "KakaoAK a42908852dfe1051e54312a6eb3c4a65" }
-})
-.done(function (msg) {
-    var title =  msg.documents[0].title;
+import swiper from "./module/swiper.js";
+import subScript from "./sub/sub.js";
 
-    $(".contents_title").append("<h3>" + title.substring(0,11) + "</h3>");
-    $(".contents_title").append("<p>기적과 감동을 추리한다!</p>");
-    $(".detail_books").append("<img src='" + msg.documents[0].thumbnail + "'>")
-    $(".detail_info_1").append("<p>" + "<small>" + "저자 : " + "</small>" + msg.documents[0].authors + "</p>")
-    $(".detail_info_1").append("<p>" + "<small>" + "출판 : " + "</small>" + msg.documents[0].publisher + "</p>")
+// $.ajax({
+//     method: "GET",
+//     url: "https://dapi.kakao.com/v3/search/book?target=title",
+//     data: { query: "에세이", size: 50 },
+//     headers: { Authorization: "KakaoAK a42908852dfe1051e54312a6eb3c4a65" }
+// })
+//     .done(function (msg) {
+//         var add_book = $(".add_book").length;
+//         for (var i = 0; i < add_book; i++) {
+//             $(".add_book").eq(i).append("<img src='" + msg.documents[i].thumbnail + "'>");
+//             $(".add_book").eq(i).append("<p>" + msg.documents[i].title + "</p>");
+//         }
+//     });
 
-    $(".price").append("<strong>" + "전자책 정가" + "</strong>");
-    $(".price").append("<p>" + msg.documents[0].price + "원" + "</p>") ;
+const API_KEY = "KakaoAK a42908852dfe1051e54312a6eb3c4a65"; //API KEY
 
-    $(".sale_price").append("<strong>" + "구매" + "</strong>");
-    $(".sale_price").append("<p>" + msg.documents[0].sale_price + "원" +  "</p>") ;
+const fetchData = async (keyword) => {
 
-    $(".datetime").append("<strong>" + "출간정보" + "</strong>");
-    $(".datetime").append("<p>" + msg.documents[0].datetime + "</p>") ;
+    try {
+        const response = await fetch(`https://dapi.kakao.com/v3/search/book?target=title&query=${keyword}&size=7`, {
+            method: "GET",
+            headers: {
+                Authorization: API_KEY,
+            }
+        });
 
-    $(".status").append("<strong>" + "도서 판매 상태" + "</strong>");
-    $(".status").append("<p>" + msg.documents[0].status + "</p>") ;
+        const data = await response.json();
 
-
-
-});
-
-$(function () {
-    $.get("./text/sub1_text.txt", function (data) {
-        $(".introduction").html(data);
-    });
-});
-
-
-$.ajax({
-    method: "GET",
-    url: "https://dapi.kakao.com/v3/search/book?target=title",
-    data: { query: "히가시노 게이고", size : 50 },
-    headers: { Authorization: "KakaoAK a42908852dfe1051e54312a6eb3c4a65" }
-})
-.done(function (msg) {
-    var slideCount = $(".slide").length;
-    for (var i = 0; i < slideCount; i++) {
-        $(".slide").eq(i).append("<img src='" + msg.documents[i].thumbnail + "'>");
-        $(".slide").eq(i).append("<p>" + msg.documents[i].title + "</p>");
+        return data.documents;
+    } catch (err) {
+        alert("데이터 로딩 중 오류가 발생하였습니다. 잠시 후 다시 시도해주세요");
+        console.log(err);
     }
-});
+}
 
-$.ajax({
-    method: "GET",
-    url: "https://dapi.kakao.com/v3/search/book?target=title",
-    data: { query: "추리", size : 50 },
-    headers: { Authorization: "KakaoAK a42908852dfe1051e54312a6eb3c4a65" }
-})
-.done(function (msg) {
-    var add_book = $(".add_book").length;
-    for (var i = 0; i < add_book; i++) {
-        $(".add_book").eq(i).append("<img src='" + msg.documents[i].thumbnail + "'>");
-        $(".add_book").eq(i).append("<p>" + msg.documents[i].title + "</p>");
+const searchData = async (keyword) => {
+    try {
+        const data = await fetchData(keyword);
+
+        const contents_title = document.querySelector('.contents_title'); //도서 제목
+        const detail_books = document.querySelector('.detail_books'); // 도서 이미지
+        const price = document.querySelector('.price'); // 도서 가격
+        const detail_info_1 = document.querySelector('.detail_info_1')//도서 저자
+        const sale_price = document.querySelector('.sale_price')//도서 구매가격
+        const datetime = document.querySelector('.datetime')//도서 출간일자
+        const status = document.querySelector('.status')//도서 판매정보
+
+        contents_title.innerHTML = `<h3>${data[0].title}</h3>`;
+        detail_books.innerHTML = `<img src="${data[0].thumbnail}">`;
+        price.innerHTML = `<strong>전자책 정가</strong><p>${data[0].price}원</p>`;
+        detail_info_1.innerHTML = `<p><small>저자 : </small>${data[0].authors}</p><p><small>출판 : </small>${data[0].publisher}</p>`;
+        sale_price.innerHTML = `<strong>구매</strong><p>${data[0].sale_price}원</p>`;
+        datetime.innerHTML = `<strong>출간일자</strong><p>${data[0].datetime}</p>`;
+        status.innerHTML = `<strong>도서 판매 상태</strong><p>${data[0].status}</p>`;
+    } catch (err) {
+        alert('오류가 발생하였습니다. 잠시 후 다시 실행해주세요')
     }
-});
+}
+
+const slideItem = async (keyword) => {
+    try {
+        const data = await fetchData(keyword)
+
+        const slide_wrap = document.querySelector('.slide_wrap');
+        data.forEach(item => {
+            const div = document.createElement('div');
+            div.classList.add('slide');
+            div.innerHTML = `
+                <img src=${item.thumbnail}>
+                <p>${item.title}</p>
+            `;
+            slide_wrap.appendChild(div);
+        });
+    } catch(err) {
+        alert('오류가 발생하였습니다. 잠시 후 다시 실행해주세요')
+    }
+}
+
+const AddData = [
+    {keyword: '추리 소설', container: 'best'},
+    {keyword: '공포', container: 'thriller'},
+    {keyword: '에세이', container: 'essay'},
+    {keyword: '인문', container: 'humanities'},
+]
+
+const addFetchApi = async () => {
+    for (const item of AddData) {
+        const container = document.querySelector(`.${item.container}`);
+        try {
+            const data = await fetchData(item.keyword);
+
+            data.forEach(item => {
+                const div = document.createElement('div');
+                div.classList.add('add_book');
+                div.innerHTML = `
+                    <img src=${item.thumbnail}>
+                    <p>${item.title}</p>
+                `;
+                container.appendChild(div);
+            });
+        } catch (err) {
+            console.error('데이터 로딩 중 오류가 발생하였습니다.');
+        }
+    }
+}
+
+const FetchAPI = async () => {
+    try {
+        await searchData('나미야 잡화점');
+        await slideItem("게이고");
+        await addFetchApi();
+        subScript();
+        swiper();
+    } catch (err) {
+        console.error('데이터 로딩중 오류가 발생하였습니다. 잠시 후 다시 시도해주세요');
+    }
+}
+
+FetchAPI();

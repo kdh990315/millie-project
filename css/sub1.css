@@ -13,6 +13,11 @@ a {
   text-decoration: none;
 }
 
+@media (max-width: 800px) {
+  body {
+    padding: 0 8px;
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -96,6 +101,11 @@ header .header_wrap .header_info_box ul li .login {
   color: #e1e1e1;
   padding-top: 20px;
   line-height: 2vh;
+}
+@media (max-width: 1200px) {
+  #contents_wrap .bg ul {
+    width: 100%;
+  }
 }
 #contents_wrap .contents_title_wrap {
   border-bottom: 1px solid #f4f4f4;
@@ -410,15 +420,24 @@ header .header_wrap .header_info_box ul li .login {
   display: block;
   background: url(../img/more.png) no-repeat right center;
 }
-#contents_wrap .main_detail_wrap .add_title .add .add_main {
+#contents_wrap .main_detail_wrap .add_title .add .container {
+  width: 100%;
+  overflow-x: hidden;
+}
+#contents_wrap .main_detail_wrap .add_title .add .container .add_main {
+  width: 900px;
   display: flex;
-  justify-content: space-between;
   padding-top: 30px;
+  justify-content: space-between;
 }
-#contents_wrap .main_detail_wrap .add_title .add .add_main .add_book {
-  width: 150px;
+#contents_wrap .main_detail_wrap .add_title .add .container .add_main .add_book {
+  width: 180px;
+  margin-right: 15px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
-#contents_wrap .main_detail_wrap .add_title .add .add_main .add_book img {
+#contents_wrap .main_detail_wrap .add_title .add .container .add_main .add_book img {
   width: 100%;
 }
 
@@ -479,6 +498,9 @@ footer .footer_wrap .footer_QT .QT3 {
   display: flex;
   flex-direction: column;
   line-height: 17px;
+}
+footer .footer_wrap .footer_QT_on {
+  display: block;
 }
 footer .footer_wrap .services {
   display: flex;
@@ -801,7 +823,7 @@ footer .footer_wrap p {
     position: absolute;
     width: 100%;
     height: 100%;
-    margin-left: 30px;
+    margin-left: 0px;
     left: 0;
     transition: left 0.3s ease-in;
     margin-top: 25px;
@@ -1145,7 +1167,7 @@ footer .footer_wrap p {
     position: absolute;
     width: 100%;
     height: 100%;
-    margin-left: 30px;
+    margin-left: 0px;
     left: 0;
     transition: left 0.3s ease-in;
     margin-top: 25px;
