@@ -256,9 +256,6 @@ header .header_wrap .header_info_box ul li .login {
   width: 1200px;
   display: flex;
   justify-content: space-between;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
 }
 #book_list .list_wrap .item_wrap .item_container .item {
   width: 145px;
@@ -376,9 +373,6 @@ header .header_wrap .header_info_box ul li .login {
   width: 1200px;
   display: flex;
   justify-content: space-between;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
 }
 #pick_book_wrap .pick_main .item_container .item {
   width: 145px;

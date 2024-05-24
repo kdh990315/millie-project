@@ -97,50 +97,49 @@ document.addEventListener('DOMContentLoaded', () => {
 	})
 
 	//변수선언
-	let containers = document.querySelectorAll('.slider_container');
-	let btn_box_wrap = document.querySelectorAll('.slide_btn_wrap');
+	const containers = document.querySelectorAll('.slider_container');
+	const btn_box_wrap = document.querySelectorAll('.slide_btn_wrap');
 
-	//containers 각각의 자식요소의 수만큼 가로 길이를 설정
-	containers.forEach((item) => {
-		item.style.width = `${320 * item.querySelectorAll('.slide').length}px`
+	// containers 각각의 자식요소의 수만큼 가로 길이를 설정
+	containers.forEach(container => {
+			const slides = container.querySelectorAll('.slide');
+			container.style.width = `${320 * slides.length}px`;
 	});
 
-	btn_box_wrap.forEach((item, index) => {
-		let btn = item.querySelectorAll('.slide_btn');
-		let btn_text = item.querySelectorAll('.slide_text_info');
+	btn_box_wrap.forEach((btnWrap, wrapIndex) => {
+			const btns = btnWrap.querySelectorAll('.slide_btn');
+			const btnTexts = btnWrap.querySelectorAll('.slide_text_info');
 
-		btn.forEach((item, index) => {
-			item.addEventListener('click', (ev) => {
-				ev.preventDefault();
+			btns.forEach((btn, btnIndex) => {
+					btn.addEventListener('click', (ev) => {
+							ev.preventDefault();
 
-				for (let i = 0; i < btn.length; i++) {
-					btn[i].classList.remove('slide_btn_on');
-					btn_text[i].classList.remove('text_on');
-				}
+							btns.forEach((btn, idx) => {
+									btn.classList.toggle('slide_btn_on', idx === btnIndex);
+									btnTexts[idx].classList.toggle('text_on', idx === btnIndex);
+							});
 
-				btn[index].classList.add('slide_btn_on');
-				btn_text[index].classList.add('text_on');
-
-				indexValue(index);
+							indexValue(btnIndex);
+					});
 			});
-		});
 
-		//slide의 좌우 움직임.(btn을 클릭했을 때 함수 실행.)
-		const indexValue = (btnIndex) => {
-			containers[index].style.left = `${-320 * btnIndex}px`;
-		}
+			// slide의 좌우 움직임.(btn을 클릭했을 때 함수 실행.)
+			const indexValue = (btnIndex) => {
+					containers[wrapIndex].style.transform = `translateX(${-320 * btnIndex}px)`;
+			};
 	});
 	//오디오북
 
 	//QNA Toggle
 	let contents = document.querySelectorAll('.QNA_contents'),
-		contexts_on = 'QNA_on';
+		contents_on = 'QNA_on';
 
 	contents.forEach((item) => {
 		item.addEventListener('click', () => {
-			item.classList.contains(contexts_on) ? item.classList.remove(contexts_on) : item.classList.add(contexts_on);
+			item.classList.toggle(contents_on);
 		});
 	});
+	//contains(contexts_on) ? item.classList.remove(contexts_on) : item.classList.add(contexts_on);
 	//QNA Toggle
 
 	//video 재생
