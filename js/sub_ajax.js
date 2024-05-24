@@ -1,20 +1,6 @@
 import swiper from "./module/swiper.js";
 import subScript from "./sub/sub.js";
 
-// $.ajax({
-//     method: "GET",
-//     url: "https://dapi.kakao.com/v3/search/book?target=title",
-//     data: { query: "에세이", size: 50 },
-//     headers: { Authorization: "KakaoAK a42908852dfe1051e54312a6eb3c4a65" }
-// })
-//     .done(function (msg) {
-//         var add_book = $(".add_book").length;
-//         for (var i = 0; i < add_book; i++) {
-//             $(".add_book").eq(i).append("<img src='" + msg.documents[i].thumbnail + "'>");
-//             $(".add_book").eq(i).append("<p>" + msg.documents[i].title + "</p>");
-//         }
-//     });
-
 const API_KEY = "KakaoAK a42908852dfe1051e54312a6eb3c4a65"; //API KEY
 
 const fetchData = async (keyword) => {

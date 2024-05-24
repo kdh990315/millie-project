@@ -77,6 +77,18 @@
             opacity: 0;
             transition: 0.9s ease-in-out;
         }
+
+        @media (max-width: 1200px) {
+            .title_text {
+                font-size: 35px;
+
+            }
+    
+            .title_text_sub {
+                font-size: 16px;
+
+            }
+        }
     }
 
     .text_wrap_on {
@@ -720,7 +732,6 @@ header {
                     display: none;
 
                     b {
-                        font-size: 22px;
                         color: #242424;
                     }
                 }
@@ -1110,6 +1121,15 @@ footer {
 
         .left_content {
             padding-left: 100px;
+
+            h1 {
+                font-size: 35px;
+            }
+
+            p {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
         }
     }
 
@@ -1117,6 +1137,10 @@ footer {
 
         .QNA_title {
             max-width: 80%;
+
+            h1 {
+                font-size: 35px;
+            }
         }
     }
 
@@ -1124,6 +1148,11 @@ footer {
         .review_text_wrap {
             h1 {
                 max-width: 280px;
+                font-size: 35px;
+            }
+
+            p {
+                font-size: 16px;
             }
         }
     }
@@ -1376,12 +1405,12 @@ footer {
                     margin-top: 30px;
 
                     .slide_text_info {
-                        font-size: 22px;
+                        font-size: 16px;
                         line-height: 30px;
                         color: #555;
 
                         b {
-                            font-size: 22px;
+                            font-size: 18px;
                             color: #242424;
                         }
                     }
@@ -1515,7 +1544,7 @@ footer {
                     padding-top: 40px;
 
                     h1 {
-                        font-size: 40px;
+                        font-size: 30px;
                         color: #242424;
                         margin-bottom: 24px;
                         line-height: 60px;
@@ -1523,7 +1552,7 @@ footer {
                     }
 
                     p {
-                        font-size: 22px;
+                        font-size: 15px;
                         color: #555;
                         line-height: 30px;
                     }
@@ -1709,17 +1738,21 @@ footer {
 
     #QNA {
         .QNA_title {
+
+            h1 {
+                font-size: 30px;
+            }
             #QNA_wrap {
                 .QNA_contents {
                     .question {
                         p {
-                            font-size: 17px;
+                            font-size: 16px;
                         }
                     }
 
                     .answer {
                         p {
-                            font-size: 15px;
+                            font-size: 14px;
                         }
                     }
                 }

@@ -138,6 +138,14 @@ header .header_wrap .header_info_box ul li .login {
   opacity: 0;
   transition: 0.9s ease-in-out;
 }
+@media (max-width: 1200px) {
+  #book_introduce .text_wrap .title_text {
+    font-size: 35px;
+  }
+  #book_introduce .text_wrap .title_text_sub {
+    font-size: 16px;
+  }
+}
 #book_introduce .text_wrap_on .title_text {
   transform: translateY(0px);
   opacity: 1;
@@ -205,6 +213,14 @@ header .header_wrap .header_info_box ul li .login {
   transform: translateY(70%);
   opacity: 0;
   transition: 0.9s ease-in-out;
+}
+@media (max-width: 1200px) {
+  #book_list .text_wrap .title_text {
+    font-size: 35px;
+  }
+  #book_list .text_wrap .title_text_sub {
+    font-size: 16px;
+  }
 }
 #book_list .text_wrap_on .title_text {
   transform: translateY(0px);
@@ -311,6 +327,14 @@ header .header_wrap .header_info_box ul li .login {
   transform: translateY(70%);
   opacity: 0;
   transition: 0.9s ease-in-out;
+}
+@media (max-width: 1200px) {
+  #pick_book_wrap .text_wrap .title_text {
+    font-size: 35px;
+  }
+  #pick_book_wrap .text_wrap .title_text_sub {
+    font-size: 16px;
+  }
 }
 #pick_book_wrap .text_wrap_on .title_text {
   transform: translateY(0px);
@@ -426,6 +450,14 @@ header .header_wrap .header_info_box ul li .login {
   opacity: 0;
   transition: 0.9s ease-in-out;
 }
+@media (max-width: 1200px) {
+  #reading .text_wrap .title_text {
+    font-size: 35px;
+  }
+  #reading .text_wrap .title_text_sub {
+    font-size: 16px;
+  }
+}
 #reading .text_wrap_on .title_text {
   transform: translateY(0px);
   opacity: 1;
@@ -537,6 +569,14 @@ header .header_wrap .header_info_box ul li .login {
   transform: translateY(70%);
   opacity: 0;
   transition: 0.9s ease-in-out;
+}
+@media (max-width: 1200px) {
+  #price .text_wrap .title_text {
+    font-size: 35px;
+  }
+  #price .text_wrap .title_text_sub {
+    font-size: 16px;
+  }
 }
 #price .text_wrap_on .title_text {
   transform: translateY(0px);
@@ -745,7 +785,6 @@ header .header_wrap .header_info_box ul li .login {
   display: none;
 }
 #content_wrap .content .left_content .slide_btn_wrap .slide_text_info b {
-  font-size: 22px;
   color: #242424;
 }
 #content_wrap .content .left_content .slide_btn_wrap .text_on {
@@ -1057,11 +1096,25 @@ footer .footer_wrap p {
   .content .left_content {
     padding-left: 100px;
   }
+  .content .left_content h1 {
+    font-size: 35px;
+  }
+  .content .left_content p {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
   #QNA .QNA_title {
     max-width: 80%;
   }
+  #QNA .QNA_title h1 {
+    font-size: 35px;
+  }
   .review_rigth .review_text_wrap h1 {
     max-width: 280px;
+    font-size: 35px;
+  }
+  .review_rigth .review_text_wrap p {
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 1050px) {
@@ -1241,12 +1294,12 @@ footer .footer_wrap p {
     margin-top: 30px;
   }
   #content_wrap .content .left_content .slide_btn_wrap .slide_text_info {
-    font-size: 22px;
+    font-size: 16px;
     line-height: 30px;
     color: #555;
   }
   #content_wrap .content .left_content .slide_btn_wrap .slide_text_info b {
-    font-size: 22px;
+    font-size: 18px;
     color: #242424;
   }
   #content_wrap .content .left_content .slide_btn_wrap .slide_btn_box {
@@ -1354,14 +1407,14 @@ footer .footer_wrap p {
     padding-top: 40px;
   }
   #review .review_wrap .review_rigth .review_text_wrap h1 {
-    font-size: 40px;
+    font-size: 30px;
     color: #242424;
     margin-bottom: 24px;
     line-height: 60px;
     max-width: 100%;
   }
   #review .review_wrap .review_rigth .review_text_wrap p {
-    font-size: 22px;
+    font-size: 15px;
     color: #555;
     line-height: 30px;
   }
@@ -1393,6 +1446,16 @@ footer .footer_wrap p {
     opacity: 0;
     transition: 0.9s ease-in-out;
   }
+}
+@media screen and (max-width: 799px) and (max-width: 1200px) {
+  #price .text_wrap .title_text {
+    font-size: 35px;
+  }
+  #price .text_wrap .title_text_sub {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 799px) {
   #price .text_wrap_on .title_text {
     transform: translateY(0px);
     opacity: 1;
@@ -1531,10 +1594,13 @@ footer .footer_wrap p {
   #reading .reading_animation_wrap .reading_animation .card2 {
     left: 19%;
   }
+  #QNA .QNA_title h1 {
+    font-size: 30px;
+  }
   #QNA .QNA_title #QNA_wrap .QNA_contents .question p {
-    font-size: 17px;
+    font-size: 16px;
   }
   #QNA .QNA_title #QNA_wrap .QNA_contents .answer p {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
